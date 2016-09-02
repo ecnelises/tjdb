@@ -1,0 +1,251 @@
+<meta charset="UTF-8">
+<head>
+  <script type="text/javascript" src="/scripts/check.js"></script>
+  <script type="text/javascript" src="/scripts/departments.js"></script>
+  <link type="text/css" rel="stylesheet" href="/stylesheets/tjdb.css" />
+  <title>填写个人资料</title>
+</head>
+
+<body onload="checkCookie()" style="text-align:center">
+    <div id="toolbar">
+    <a id="tjdb_name">同济公共课程数据库计划</a>
+    <div id="options_container">
+        <a id="user_name" href="/self-center/"></a>
+        <a id="logout" href="/" onclick="deleteCookie()">退出</a>
+    </div>
+    </div>
+  <br />
+  <div class="content_container">
+      <div class="content fillinfo">
+  <form action="/self-center/submitinfo.php" onsubmit="return checkInfo()"
+        onreset="clearAlert()" id="infoform" method="post">
+    <fieldset>
+        <legend>学院资料</legend>
+        <p><span class="labeltext">现所在学院：</span>
+      <select onchange="changeSelect('current')" id="current_college">
+        <option value="sem">经济与管理学院</option>
+        <option value="caup">建筑与城市规划学院</option>
+        <option value="tjdi">设计创意学院</option>
+        <option value="cart">艺术与传媒学院</option>
+        <option value="civileng">土木工程学院</option>
+        <option value="celiang">测绘与地理信息学院</option>
+        <option value="jt">交通运输工程学院</option>
+        <option value="sese">环境科学与工程学院</option>
+        <option value="mat">材料科学与工程学院</option>
+        <option value="mefaculty">机械与能源工程学院</option>
+        <option value="auto">汽车学院</option>
+        <option value="railway">铁道与城市轨道交通研究院</option>
+        <option value="see">电子与信息工程学院</option>
+        <option value="sse">软件学院</option>
+        <option value="cdhaw">中德工程学院</option>
+        <option value="life">生命科学与技术学院</option>
+        <option value="med">医学院</option>
+        <option value="kq">口腔医学院</option>
+        <option value="mgg">海洋与地球科学学院</option>
+        <option value="aeromech">航空航天与力学学院</option>
+        <option value="mathematics">数学系</option>
+        <option value="physics">物理科学与工程学院</option>
+        <option value="chemistry">化学系</option>
+        <option value="law">法学院</option>
+        <option value="sfl">外国语学院</option>
+        <option value="sal">人文学院</option>
+        <option value="spsir">政治与国际关系学院</option>
+      </select>
+        <p><span class="labeltext">现所在专业：</span>
+        <select id="current_major" name="current_major">
+          <option value="class_mng">社会科学实验班（管理学类）</option>
+          <option value="mng_project">工程管理</option>
+          <option value="mng_info">信息管理与信息系统</option>
+          <option value="mng_transport">物流管理</option>
+          <option value="market_sale">市场营销</option>
+          <option value="accounting">会计学</option>
+          <option value="mng_administration">行政管理</option>
+          <option value="class_economy">社会科学实验班（经济学类）</option>
+          <option value="finance">金融学</option>
+          <option value="international_trade">国际经济与贸易</option>
+        </select>
+      </p>
+    </p>
+      <p><span class="labeltext">原所在学院（如果有过转专业经历）：</span>
+      <select onchange="changeSelect('past')" id="past_college">
+        <option value="none">无</option>
+        <option value="sem">经济与管理学院</option>
+        <option value="caup">建筑与城市规划学院</option>
+        <option value="tjdi">设计创意学院</option>
+        <option value="cart">艺术与传媒学院</option>
+        <option value="civileng">土木工程学院</option>
+        <option value="celiang">测绘与地理信息学院</option>
+        <option value="jt">交通运输工程学院</option>
+        <option value="sese">环境科学与工程学院</option>
+        <option value="mat">材料科学与工程学院</option>
+        <option value="mefaculty">机械与能源工程学院</option>
+        <option value="auto">汽车学院</option>
+        <option value="railway">铁道与城市轨道交通研究院</option>
+        <option value="see">电子与信息工程学院</option>
+        <option value="sse">软件学院</option>
+        <option value="cdhaw">中德工程学院</option>
+        <option value="life">生命科学与技术学院</option>
+        <option value="med">医学院</option>
+        <option value="kq">口腔医学院</option>
+        <option value="mgg">海洋与地球科学学院</option>
+        <option value="aeromech">航空航天与力学学院</option>
+        <option value="mathematics">数学系</option>
+        <option value="physics">物理科学与工程学院</option>
+        <option value="chemistry">化学系</option>
+        <option value="law">法学院</option>
+        <option value="sfl">外国语学院</option>
+        <option value="sal">人文学院</option>
+        <option value="spsir">政治与国际关系学院</option>
+      </select>
+      <p hidden id="past_paragraph"><span class="labeltext">原所在专业：</span>
+        <select hidden id="past_major" name="past_major">
+        </select>
+      </p>
+    </p>
+    </fieldset>
+    <fieldset>
+        <legend>个人资料</legend>
+        <p><span class="labeltext">入学年：</span>
+      <select name="admission_year">
+        <option value="2014">2014</option>
+        <option value="2013">2013</option>
+        <option value="2012">2012</option>
+        <option value="2011">2011</option>
+        <option value="2010">2010</option>
+        <option value="2009">2009</option>
+        <option value="2008">2008</option>
+        <option value="2007">2007</option>
+        <option value="2006">2006</option>
+        <option value="2005">2005</option>
+        <option value="2004">2004</option>
+        <option value="2003">2003</option>
+        <option value="2002">2002</option>
+        <option value="2001">2001</option>
+        <option value="2000">2000</option>
+      </select>
+    </p>
+        <p><span class="labeltext">性别：</span>
+            <input type="radio" name="gender" value="male" id="male"/><label for="male">男</label>　
+            <input type="radio" name="gender" value="female" id="female"/><label for="female">女</label>
+    </p>
+        <p><span class="labeltext">生源地：</span>
+      <select name="hometown">
+        <option value="bj">北京</option>
+        <option value="sh">上海</option>
+        <option value="tj">天津</option>
+        <option value="cq">重庆</option>
+        <option value="nmg">内蒙古</option>
+        <option value="sxmountain">山西</option>
+        <option value="sx">陕西</option>
+        <option value="hnriver">河南</option>
+        <option value="xj">新疆</option>
+        <option value="fj">福建</option>
+        <option value="hn">湖南</option>
+        <option value="yn">云南</option>
+        <option value="zj">浙江</option>
+        <option value="hlj">黑龙江</option>
+        <option value="jl">吉林</option>
+        <option value="ln">辽宁</option>
+        <option value="jx">江西</option>
+        <option value="ah">安徽</option>
+        <option value="sc">四川</option>
+        <option value="xz">西藏</option>
+        <option value="qh">青海</option>
+        <option value="hbriver">河北</option>
+        <option value="sd">山东</option>
+        <option value="js">江苏</option>
+        <option value="nx">宁夏</option>
+        <option value="gs">甘肃</option>
+        <option value="hb">湖北</option>
+        <option value="hnsea">海南</option>
+        <option value="gd">广东</option>
+        <option value="gx">广西</option>
+        <option value="gz">贵州</option>
+        <option value="gat">港澳台</option>
+        <option value="oversea">海外</option>
+      </select>
+    </p>
+        <p><span class="labeltext">生日：</span>
+      <select id="birthday_year" onchange="adjustDate()" name="birthday_year">
+        <option value="2005">2005</option>
+        <option value="2004">2004</option>
+        <option value="2003">2003</option>
+        <option value="2002">2002</option>
+        <option value="2001">2001</option>
+        <option value="2000">2000</option>
+        <option value="1999">1999</option>
+        <option value="1998">1998</option>
+        <option value="1997">1997</option>
+        <option value="1996">1996</option>
+        <option value="1995">1995</option>
+        <option value="1994">1994</option>
+        <option value="1993">1993</option>
+        <option value="1992">1992</option>
+        <option value="1991">1991</option>
+        <option value="1990">1990</option>
+        <option value="1989">1989</option>
+        <option value="1988">1988</option>
+        <option value="1987">1987</option>
+        <option value="1986">1986</option>
+        <option value="1985">1985</option>
+      </select>
+      <select id="birthday_month" onchange="adjustDate()" name="birthday_month">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+      <select id="birthday_day" name="birthday_day">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+      </select>
+    </p>
+    <p id="alertmsg" hidden style="color:red">
+    </p>
+    </fieldset>
+    <p>
+      <input type="submit" />
+      <input type="reset" />
+    </p>
+  </form>
+  <br />
+    </div>
+    </div>
+</body>

@@ -1,0 +1,47 @@
+<meta charset="UTF-8">
+<html>
+  <head>
+    <title>个人中心</title>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/tjdb.css" />
+    <script type="text/javascript" src="/scripts/check.js"></script>
+    <script type="text/javascript" src="/scripts/style.js"></script>
+    <script type="text/javascript" src="/scripts/course.js"></script>
+  </head>
+  <body onload="(function(){checkCookie();showCourseInTable();})()">
+    <div id="toolbar">
+      <a id="tjdb_name">同济公共课程数据库计划</a>
+      <div id="options_container">
+        <a id="user_name"></a>
+        <a id="logout" href="/" onclick="deleteCookie()">退出</a>
+      </div>
+    </div>
+    <div class="content_container">
+      <div class="content selfcenter">
+        <div class="info_tabs"> 
+          <ul class="tab_nav">
+            <li class="tab active"><a href="javascript:void(0)" onclick="changeTabDisplay('course')">课程资料</a></li>
+            <li class="tab"><a href="javascript:void(0)" onclick="changeTabDisplay('info')">个人信息</a></li>
+          </ul>
+        </div>
+        <div class="innerpart">
+          <div class="courseslist">
+            <div class="record search">
+              <a href="/courses/search/">搜索课程</a>
+            </div>
+            <table class="course_table" id="select_result">
+            </table>
+            <table id="course_detail" hidden>
+            </table>
+          </div>
+          <div class="info" hidden>
+            <div class="changeinfo">
+              <a href="/self-center/fillinfo/">修改资料</a>
+            </div>
+            <table id="infopage">
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

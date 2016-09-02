@@ -1,0 +1,81 @@
+table.info{
+  border-collapse: collapse;
+  width: 400px;
+  margin-bottom: 10px;
+}
+
+table.info td {
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+}
+
+.courseslist a:link, .courseslist a:visited {
+    display: block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+
+.courseslist a:hover, .courseslist a:active {
+    background-color: #C0C0C0;
+    color: white;
+}
+
+.record {
+  text-align: center;
+  border-right: 1px solid #F5F5F5;
+  display: block;
+}
+
+.record.search {
+  margin-top: 10px;
+  display: block;
+  width: 450px;
+  border-right-width: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+}
+
+.record.comment {
+  border-right-width: 0px;
+}
+
+.course_table {
+  width: 685px;
+  overflow: hidden;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.course_table td {
+    text-align: center;
+}
+
+table#infopage {
+  text-align: left;
+}
+
+.changeinfo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.changeinfo a:link, changeinfo a:visited {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.changeinfo a:hover, changeinfo a:active {
+    background-color: #808080;
+    color: white;
+}
+
+#infopage {
+    font-size: 14px;
+}

@@ -1,0 +1,21 @@
+<meta charset=UTF-8>
+<html>
+  <head>
+    <title>建议</title>
+  </head>
+  <body>
+    <form action="submitsug.php" method="post" name="sugform">
+      <textarea placeholder="你的建议" name="suggestion" autofocus required rows="8" cols="35"></textarea>
+      <input type="text" name="itemname" hidden>
+      <input type="submit">
+    </form>
+    <script>
+      var querystring = window.location.search.substring(1);
+      var queryname = querystring.split("=")[0];
+      var querything = querystring.split("=")[1].split("&")[0];
+      if (queryname == "q") {
+        sugform.itemname.value = querything;
+      }
+    </script>
+  </body>
+</html>

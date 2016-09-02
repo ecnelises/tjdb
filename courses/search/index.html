@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+    <html>
+        <head>
+            <script type="text/javascript" src="/scripts/check.js"></script>
+            <script type="text/javascript" src="/scripts/course.js"></script>
+            <script type="text/javascript" src="/scripts/style.js"></script>
+            <link rel="stylesheet" type="text/css" href="/stylesheets/tjdb.css" />
+            <title>填写课程信息</title>
+        </head>
+        
+        <body onload="checkCookie()">
+            <div id="toolbar">
+                <a id="tjdb_name">同济公共课程数据库计划</a>
+                <div id="options_container">
+                    <a id="user_name"></a>
+                    <a id="logout" href="/" onclick="deleteCookie()">退出</a>
+                </div>
+            </div>
+            <div class="content_container">
+                <div class="content selfcenter">
+                <p>查询方式：</p>
+                <p>
+                <p>
+                <input type="radio" checked="checked" name="select_method" value="by_teacher" id="method_by_teacher" /><label for="method_by_teacher">按教师名查询</label>
+                </p>
+                <input type="radio" name="select_method" value="by_course_name" id="method_by_course_name" /><label for="method_by_course_name">按课程名查询</label>
+                </p>
+                <input type="text" name="select_item" id="select_item" onkeydown="keyEnter()" />
+                    <input type="button" onclick="showResult()" value="搜索" />
+            <div id="select_result"></div>
+            </div></div>
+        </body>
+    </html>

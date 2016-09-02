@@ -1,0 +1,24 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Hiragino Sans GB", "STHeiti Light", "Heiti Sans", "YaHei", "SimHei";
+}
+
+.content_container {
+    margin-top: 70px;
+    width: 100%;
+}
+
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+}
+
+.content.selfcenter {
+    width: 700px;
+}
+
+.content.fillinfo {
+    width: 550px;
+}
